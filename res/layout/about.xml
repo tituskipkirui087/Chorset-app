@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="2.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dp" android:layout_marginTop="10.0dp" android:layout_marginRight="10.0dp" android:layout_marginBottom="10.0dp">
+            <TextView android:textSize="16.0sp" android:textColor="@color/black" android:id="@id/about_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/about_text" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dp" android:layout_marginTop="10.0dp" android:layout_marginRight="10.0dp" android:layout_marginBottom="10.0dp">
+            <TextView android:textSize="14.0sp" android:textColor="@color/black" android:layout_gravity="center" android:id="@id/neurondigital" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/neurondigital" />
+        </LinearLayout>
+        <com.gc.materialdesign.views.ButtonRectangle android:id="@id/report" android:background="@color/blue" android:paddingLeft="10.0dp" android:paddingRight="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="30.0dp" android:text="@string/report" />
+    </LinearLayout>
+</ScrollView>

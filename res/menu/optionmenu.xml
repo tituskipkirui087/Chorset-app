@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:faktextmessage="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_share" android:id="@id/share" android:title="@string/title_share" faktextmessage:showAsAction="ifRoom|withText" />
+    <item android:icon="@drawable/ic_premium" android:id="@id/premium" android:title="@string/title_premium" faktextmessage:showAsAction="ifRoom|withText" />
+    <item android:icon="@drawable/ic_help" android:id="@id/credit" android:title="@string/title_help" faktextmessage:showAsAction="ifRoom|withText" />
+    <item android:icon="@drawable/options" android:id="@id/preferences" android:title="@string/title_preferences" faktextmessage:showAsAction="ifRoom|withText" />
+</menu>
