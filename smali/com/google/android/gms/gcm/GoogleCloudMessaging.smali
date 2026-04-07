@@ -1086,6 +1086,8 @@
 
     const/4 v3, 0x0
 
+    const/high16 v3, 0x04000000
+
     invoke-static {v1, v2, v0, v3}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0

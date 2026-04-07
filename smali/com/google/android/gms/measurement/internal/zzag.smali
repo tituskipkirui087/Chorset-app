@@ -54,6 +54,10 @@
 
     move-result-object v1
 
+    const/high16 v4, 0x4000000
+
+    or-int/2addr v3, v4
+
     invoke-static {v1, v3, v0, v3}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0

@@ -1528,7 +1528,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v2, 0x10000000
+    const/high16 v2, 0x14000000
 
     invoke-static {p0, v1, v0, v2}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 

@@ -330,7 +330,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x40000000    # 2.0f
+    const/high16 v3, 0x44000000
 
     invoke-static {v0, v2, v1, v3}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
@@ -361,7 +361,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x40000000    # 2.0f
+    const/high16 v3, 0x44000000
 
     invoke-static {v1, v2, v0, v3}, Landroid/app/PendingIntent;->getService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
@@ -391,7 +391,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x40000000    # 2.0f
+    const/high16 v3, 0x44000000
 
     invoke-static {v1, v2, v0, v3}, Landroid/app/PendingIntent;->getService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 

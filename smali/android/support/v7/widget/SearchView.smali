@@ -1589,7 +1589,7 @@
 
     const/4 v11, 0x0
 
-    const/high16 v12, 0x40000000    # 2.0f
+    const/high16 v12, 0x44000000
 
     invoke-static {v10, v11, v6, v12}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 

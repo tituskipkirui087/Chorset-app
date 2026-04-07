@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.hitmedland.newTextMessage" platformBuildVersionCode="36" platformBuildVersionName="16">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.hitmedland.newTextMessage">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="com.android.vending.BILLING"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -39,21 +40,21 @@
             </intent-filter>
         </activity-alias>
         <activity android:label="@string/app_name" android:name="com.hitmedland.newTextMessage.About" android:exported="false">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".FakeTextMessage"/>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.hitmedland.newTextMessage.FakeTextMessage"/>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         <activity android:label="@string/app_name" android:name="com.hitmedland.newTextMessage.PremiumActivity" android:exported="false">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".FakeTextMessage"/>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.hitmedland.newTextMessage.FakeTextMessage"/>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         <activity android:label="@string/app_name" android:name="com.hitmedland.newTextMessage.Preferences" android:exported="false">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".FakeTextMessage"/>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.hitmedland.newTextMessage.FakeTextMessage"/>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -80,18 +81,7 @@
                 <data android:scheme="mmsto"/>
             </intent-filter>
         </service>
-        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
-            <intent-filter>
-                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
-            </intent-filter>
-        </receiver>
-        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
-        <receiver android:exported="true" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
-            <intent-filter>
-                <action android:name="com.android.vending.INSTALL_REFERRER"/>
-            </intent-filter>
-        </receiver>
-        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <!-- Removed crashing Analytics components for modern Android compatibility -->
         <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:exported="false" android:theme="@style/Theme.IAPTheme"/>
         <activity android:exported="true" android:name="com.google.android.gms.appinvite.PreviewActivity" android:theme="@style/Theme.AppInvite.Preview">
             <intent-filter>
@@ -101,13 +91,7 @@
         </activity>
         <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
-        <provider android:authorities="com.hitmedland.newTextMessage.google_measurement_service" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"/>
-        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
-            <intent-filter>
-                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
-            </intent-filter>
-        </receiver>
-        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <!-- Removed crashing Measurement provider for modern Android compatibility -->
         <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
     </application>
 </manifest>

@@ -36,6 +36,8 @@
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
+    const/high16 v2, 0x04000000
+
     invoke-static {v0, v2, v1, v2}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
