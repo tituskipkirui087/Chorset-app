@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.vending.billing.IabHelper;
 import com.android.vending.billing.IabResult;
@@ -27,8 +28,8 @@ public class PremiumActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        context = this;
-        activity = this;
+        this.context = this;
+        this.activity = this;
         setContentView(R.layout.activity_premium);
 
         ActionBar actionBar = getSupportActionBar();
@@ -41,27 +42,28 @@ public class PremiumActivity extends AppCompatActivity {
             actionBar.setTitle(Html.fromHtml(title));
         }
 
-        billingHelper = new BillingHelper(activity, new BillingHelper.RefreshListener() {
-            @Override
-            public void onRefresh(boolean isPremium, Inventory inventory) {
-                if (isPremium) {
-                    finish();
+        billingHelper = new BillingHelper(this.activity, 
+            new BillingHelper.RefreshListener() {
+                @Override
+                public void onRefresh(boolean isPremium, Inventory inventory) {
+                    if (isPremium) {
+                        finish();
+                    }
+                }
+            }, 
+            new IabHelper.OnIabPurchaseFinishedListener() {
+                @Override
+                public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
+                    System.out.println("Purchase successful " + result);
+                }
+            }, 
+            new IabHelper.OnConsumeFinishedListener() {
+                @Override
+                public void onConsumeFinished(Purchase purchase, IabResult result) {
                 }
             }
-        }, new IabHelper.OnIabPurchaseFinishedListener() {
-            @Override
-            public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
-                System.out.println("Purchase successful " + result);
-            }
-        }, new IabHelper.OnConsumeFinishedListener() {
-            @Override
-            public void onConsumeFinished(Purchase purchase, IabResult result) {
-            }
-        });
+        );
 
-        Typeface robotoMedium = Typeface.createFromAsset(getAssets(), "Roboto-Medium.ttf");
-        Typeface robotoRegular = Typeface.createFromAsset(getAssets(), "Roboto-Regular.ttf");
-        Typeface robotoThin = Typeface.createFromAsset(getAssets(), "Roboto-Thin.ttf");
         Typeface robotoLight = Typeface.createFromAsset(getAssets(), "Roboto-Light.ttf");
 
         TextView title_ads = (TextView) findViewById(R.id.title_ads);
